@@ -362,3 +362,12 @@ input[type=submit]:hover {
     font-family: Maven Pro;
   	background-color: linear-gradient(90deg, rgba(167,26,18,1) 0%, rgba(246,120,113,1) 75%);
 }
+
+.logo-main {
+   width: 80%;
+   text-align: center;
+}
+
+.formulari {
+   padding: 0 25%;
+}
