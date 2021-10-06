@@ -371,3 +371,8 @@ input[type=submit]:hover {
 .formulari {
    padding: 0 25%;
 }
+
+.fas.fa-info-circle{
+   color: rgb(167,26,18);
+   width: 20%;
+}
