@@ -369,5 +369,6 @@ input[type=submit]:hover {
 }
 
 .formulari {
-   padding: 0 25%;
+   padding: 0 20%;
+   padding-top: 50px;
 }
