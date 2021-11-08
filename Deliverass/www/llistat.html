@@ -2,31 +2,44 @@
 
 
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <link rel="stylesheet" href="css/menu.css">
-        <title>Hello World</title>
-    </head>
-    <body>
-        <main>     
-              
-            <nav class="menu">
-                <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
-                <label class="menu-open-button" for="menu-open">
-                    <span class="lines line-1"></span>
-                    <span class="lines line-2"></span>
-                    <span class="lines line-3"></span>
-                </label>
-                <a href="#" class="menu-item red"> <i class="fa fa-anchor"></i></a>
-                <a href="#" class="menu-item red"> <i class="fa fa-coffee"></i></a>
-                <a href="#" class="menu-item red"> <i class="fa fa-heart"></i></a>
-                <a href="#" class="menu-item red"> <i class="fa fa-microphone"></i></a>
-             </nav>
-        </main>
-        <script src="cordova.js"></script>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="css/llistat.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/69fb3d2fdc.js" crossorigin="anonymous"></script>
+    <title>Llistat</title>
+</head>
+
+<body>
+    <header>
+        <a href="javascript:history.back()"><i class="fas fa-backward"></i></a>
+        <h1>ENTREGUES</h1>
+        <div class="filtrador">
+            <div class="filtre">
+                <select id="estat">
+                    <option value="tots">Tots</option>
+                    <option value="entregats">Entregats</option>
+                    <option value="pendents">Pendens</option>
+                </select>
+
+                <input type="text" id="dataFiltre" name="DataFiltre" placeholder="Filtrar per data">
+                <input type="text" id="codiPostal" name="codiPostal" placeholder="Filtrar per codi postal">
+            </div>
+            <button id="filtrar">FILTRAR</button>
+        </div>
+
+    </header>
+    <div class="entregues">
+        <div class="entrega"></div>
+    </div>
+    <script src="cordova.js"></script>
+</body>
+
 </html>
