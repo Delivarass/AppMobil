@@ -389,6 +389,24 @@ a{
    padding-top: 50px;
 }
 
-header.accessibilitat{
+header.accessibilitat, header.paquet{
    background-color: #C1271F;
+   height: 70px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+header.accessibilitat span, header.paquet span{
+   margin: 0 auto;
+}
+header.accessibilitat i, header.paquet i{
+   padding-left: 15px;
+}
+body#accessibilitat, body#paquet{
+   padding-top: 0px;
+}
+#zona_mapa{
+   width: 100%;
+   height: 100%;
+   /* border: 2px solid black; */
 }
