@@ -9,7 +9,18 @@ var app = {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
         L.marker([position.coords.latitude, position.coords.longitude]).addTo(map)
-            .bindPopup('Posició actual')
+            .bindPopup("<section class='popup'>"+
+            "<label for='entrega'>ENTREGA: </label>"+
+            "<label for='direccio'>DIRECCIÓ: </label>"+
+            "<label for='ciutat'>CIUTAT: </label>"+
+            "<label for='estat'>ESTAT: </label>"+
+            "<label for='pes'>PES: </label>"+
+          
+            "<div class='botons'>"+
+              "<button id='cancelar'>CANCELAR</button>"+
+              "<button id='entrega'>ENTREGA</button>"+
+            "</div>"+
+          "</section>")
             .openPopup();
     }
 }
