@@ -1,4 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;700&display=swap');
+
+@font-face {
+   font-family: Maven Pro Bold;
+   src: url(../fonts/MavenPro-Bold.ttf);
+}
+
+@font-face {
+   font-family: Maven Pro Regular;
+   src: url(../fonts/MavenPro-Regular.ttf);
+}
+
+h1, h2, h3, h4, h5, h6{
+   font-family: Maven Pro Bold !important;
+}
+*{
+   font-family: Maven Pro Regular;
+}
+
 body {
     padding: 0;
     margin: 0;
