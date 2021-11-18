@@ -1,8 +1,11 @@
-
 window.addEventListener("ready", inici, false);
 
-
 function inici() {
+  
+  var today = new Date();
+  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+
+  console.log(date);
 
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
@@ -10,7 +13,7 @@ function inici() {
       lecturaxml(this);
     }
   };
-  xhttp.open("GET", "xml/arxiu2021-11-15.xml", true);
+  xhttp.open("GET", "xml/"+ date +"/arxiu"+ date +".xml", true);
   xhttp.send();
 }
 
@@ -49,4 +52,4 @@ var app = {
   }
 }
 
-document.addEventListener("deviceready", app.init(), false);
+document.addEventListener("deviceready", app.init(), inici, false);

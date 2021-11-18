@@ -322,6 +322,7 @@ input[type=text], select {
     margin: 8px 0;
     display: inline-block;
     border-bottom: 1px solid #ccc !important;
+    color: black;
     border-radius: 4px;
     box-sizing: border-box;
     border-color: transparent;
@@ -335,6 +336,7 @@ input[type=password], select {
     margin: 8px 0;
     display: inline-block;
     border-bottom: 1px solid #ccc !important;
+    color: black;
     border-radius: 4px;
     box-sizing: border-box;
     border-color: transparent;
@@ -342,7 +344,7 @@ input[type=password], select {
     font-weight: 400;
     background-color: transparent;
 }
-input[type=submit] {
+input[type=button] {
     width: 100%;
     background: rgb(167,26,18);
     background: linear-gradient(90deg, rgba(167,26,18,1) 0%, rgba(246,120,113,1) 75%);
@@ -356,7 +358,7 @@ input[type=submit] {
     font-family: Maven Pro;
 }
 
-input[type=submit]:hover {
+input[type=button]:hover {
 	background: rgb(167,26,18);
     transition: all .4s ease;
     font-family: Maven Pro;

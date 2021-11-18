@@ -1,7 +1,10 @@
 window.addEventListener("load", inici, false);
 
 function inici(){
-
+	var today = new Date();
+	var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  
+	console.log(date);
 var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
 		    if (this.readyState == 4 && this.status == 200) {
