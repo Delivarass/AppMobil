@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/69fb3d2fdc.js" crossorigin="anonymous"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/accessibilitat.js"></script>
     <script>
         $(document).ready(function () {
             var xml;
@@ -48,17 +49,41 @@
             
             <input type="button" id="b1" value="ACCEDIR"> 
         </form>
+        <button id="myBtn"><i class="fas fa-universal-access"></i>ACCESSIBILITAT</button>
+        <div id="myModal" class="modal">
 
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="botons_accessibilitat">
+                    <span class="titols_botons">MIDA DE LA FONT</span><br /><br />
+                    <button role="button" id="resettext">
+                        <span>RESTABLIR</span>
+                    </button>
+                    <button role="button" id="increasetext">
+                        <span>AUGMENTAR</span>
+                    </button> 
+                    <br /><br /><br /><span class="titols_botons">MIDA DE LA FONT</br><br />
+                    <button role="button" id="vision">
+                        <span>TEMA CLAR</span>
+                    </button>
+                    <button role="button" id="vision2">
+                        <span>TEMA FOSC</span>
+                    </button>
+                </div>
+            </div>
+          
+        </div>
         <!-- <a href="menu.html">ACCEDIR</a> -->
     </div>
 
     <footer>
-        <br />
-        <a href="accessibilitat.html"><i class="fas fa-universal-access"></i>ACCESSIBILITAT</a>
+        
     </footer>
 
     <script src="cordova.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/accessibilitat.js"></script>
 
 </body>
 
