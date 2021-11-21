@@ -11,9 +11,9 @@
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
     <meta name="color-scheme" content="light dark">
-    <link rel="stylesheet" href="css/llistat.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/69fb3d2fdc.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/llistat.css">   
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <title>Llistat</title>
 </head>
 
@@ -28,18 +28,17 @@
                     <option value="entregats">Entregats</option>
                     <option value="pendents">Pendens</option>
                 </select>
-
-                <input type="text" id="dataFiltre" name="DataFiltre" placeholder="Filtrar per data">
                 <input type="text" id="codiPostal" name="codiPostal" placeholder="Filtrar per codi postal">
             </div>
             <button id="filtrar">FILTRAR</button>
         </div>
 
     </header>
-    <div class="entregues">
-        <div class="entrega"></div>
-    </div>
+    <!-- <div class="entregues"> -->
+        <ul id="entrega" name="entrega"></ul>
+    <!-- </div> -->
     <script src="cordova.js"></script>
+    <script src="js/llistat.js"></script>
 </body>
 
 </html>
