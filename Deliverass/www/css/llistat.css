@@ -1,10 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;700&display=swap');
+
+
+@font-face {
+    font-family: Maven Pro Bold;
+    src: url(../fonts/MavenPro-Bold.ttf);
+ }
+ 
+ @font-face {
+    font-family: Maven Pro Regular;
+    src: url(../fonts/MavenPro-Regular.ttf);
+ }
+ 
+ h1, h2, h3, h4, h5, h6{
+    font-family: Maven Pro Bold !important;
+ }
+ *{
+    font-family: Maven Pro Regular;
+ }
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Maven Pro';
+
 }
 
 body{
@@ -14,7 +31,7 @@ body{
 }
 
 header{
-    height: 20%;
+    height: 17%;
     background-color: #C1271F;
 }
 
@@ -45,14 +62,6 @@ header h1{
     border: none;
 }
 
-#dataFiltre{
-    width: 40vw;
-    height: 5vh;
-    background-color: white;
-    color: black;
-    border: none;
-}
-
 #codiPostal{
     width: 40vw;
     height: 5vh;
@@ -68,12 +77,36 @@ header h1{
     border: none;
     border-radius: 7.5px;
     width: 25vw;
-    height: 10vh;
+    height: 5vh;
 }
 
-.entregues{
+#entrega{
     background-color: #E0E0E0;
     height: 100%;
+}
+
+ul{
+    height: auto;
+    width: 100%;
+}
+
+li{
+    height: auto;
+    border: 1px solid #C1271F;
+    background-color:#A0A0A0;
+}
+
+li h2{
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+
+}
+
+li h3{
+    font-size: 15px;
+    color: black;
+    margin-bottom: 5px;
 }
 
 #ImatgeCamara{
