@@ -24,8 +24,11 @@ function lecturaxml(xml) {
   for (var i = 0; i < xmlDoc.getElementsByTagName("pedido").length; i++) {
     latitud   = xmlDoc.getElementsByTagName("latitud")[i].childNodes[0].nodeValue;
     longitud  = xmlDoc.getElementsByTagName("longitud")[i].childNodes[0].nodeValue;
-    estat     = xmlDoc.getElementsByTagName("estat")[i].childNodes[0].nodeValue; 
-    locations.push(["Location"+i, latitud, longitud, estat]);
+    id_enviament = xmlDoc.getElementsByTagName("id_enviament")[i].childNodes[0].nodeValue;
+    direccio  = xmlDoc.getElementsByTagName("direccio")[i].childNodes[0].nodeValue;  
+    dataEnv  = xmlDoc.getElementsByTagName("dataEnv")[i].childNodes[0].nodeValue; 
+    estat = xmlDoc.getElementsByTagName("estat")[i].childNodes[0].nodeValue; 
+    locations.push([i, latitud, longitud, id_enviament, direccio, dataEnv, estat]);
     console.log(locations);
   }
   app.init();
@@ -65,13 +68,31 @@ var app = {
     });
 
     for (var i = 0; i < locations.length; i++) {
-      if (locations[i][3] == 'No entregat') {
-        marker = new L.marker([locations[i][1], locations[i][2]], { icon: redIcon }).bindPopup(locations[i][0]).addTo(map);
+      if (locations[i][6] == 'No entregat') {
+        marker = new L.marker([locations[i][1], locations[i][2]], { icon: redIcon }).bindPopup("<button id='cameraTakePicture'><i class='fas fa-camera'></i>FOTO</button><br><img id='ImatgeCamara'></img><br><b>Ref.: </b>" + locations[i][3] + "<br><b>Direccio: </b>" + locations[i][4]+ "<br><b>Entrega: </b>" + locations[i][5] + "<br><b>Estat: </b>" + locations[i][6]).addTo(map);
       } else {
-        marker = new L.marker([locations[i][1], locations[i][2]], { icon: greenIcon }).bindPopup(locations[i][0]).addTo(map);
+        marker = new L.marker([locations[i][1], locations[i][2]], { icon: greenIcon }).bindPopup("<button id='cameraTakePicture'><i class='fas fa-camera'></i>FOTO</button><br><img id='ImatgeCamara'></img><br><b>Ref.: </b>" + locations[i][3] + "<br><b>Direccio: </b>" + locations[i][4]+ "<br><b>Entrega: </b>" + locations[i][5] + "<br><b>Estat: </b>" + locations[i][6]).addTo(map);
       }
-
+        
     }
   }
+}
+
+document.getElementById("cameraTakePicture").addEventListener("click", cameraTakePicture); 
+   function cameraTakePicture() { 
+   navigator.camera.getPicture(onSuccess, onFail, {  
+      quality: 50, 
+      correctOrientation: true,
+      destinationType: Camera.DestinationType.DATA_URL 
+   });  
+    
+   function onSuccess(imageData) { 
+      var image = document.getElementById('ImatgeCamara'); 
+      image.src = "data:image/jpeg;base64," + imageData; 
+   }  
+    
+   function onFail(message) { 
+      alert('Failed because: ' + message); 
+   } 
 }
 
