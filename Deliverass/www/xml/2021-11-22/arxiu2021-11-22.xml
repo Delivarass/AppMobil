@@ -7,6 +7,7 @@
         <direccio>c/Muralla n5</direccio>
         <latitud>41.651839</latitud>
         <longitud>1.140835</longitud>
+        <img></img>
         <pes>23KG</pes>
         <cp>25300</cp>
         <dataEnv>2021-11-16</dataEnv>
@@ -20,10 +21,11 @@
         <direccio>av/Catalunya n59</direccio>
         <latitud>41.648759</latitud>
         <longitud>1.104149</longitud>
+        <img></img>
         <pes>100KG</pes>
         <cp>25300</cp>
         <dataEnv>2021-11-16</dataEnv>
-        <estat>No entregat</estat>
+        <estat>Entregat</estat>
         <dataEnt/>
     </pedido>
 </deliverass>
