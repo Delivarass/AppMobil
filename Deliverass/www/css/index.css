@@ -437,6 +437,7 @@ body#accessibilitat, body#paquet{
    color: #000;
 }
 .modal {
+   transition: all .4s ease;
    display: none; /* Hidden by default */
    position: fixed; /* Stay in place */
    z-index: 1; /* Sit on top */
@@ -452,6 +453,7 @@ body#accessibilitat, body#paquet{
  
  /* Modal Content */
  .modal-content {
+   transition: all .4s ease;
    background-color: #fefefe;
    margin: auto;
    padding: 20px;

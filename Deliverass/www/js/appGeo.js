@@ -25,8 +25,7 @@ function lecturaxml(xml) {
     latitud   = xmlDoc.getElementsByTagName("latitud")[i].childNodes[0].nodeValue;
     longitud  = xmlDoc.getElementsByTagName("longitud")[i].childNodes[0].nodeValue;
     estat     = xmlDoc.getElementsByTagName("estat")[i].childNodes[0].nodeValue; 
-
-    locations.push(["Location"+i, latitud, longitud, estat]);
+   locations.push(["Location"+i, latitud, longitud, estat]);
     console.log(locations);
   }
   app.init();
