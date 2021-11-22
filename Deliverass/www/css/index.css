@@ -521,6 +521,7 @@ body#accessibilitat, body#paquet{
 .vision-dark{
    background-color: #000 !important;
    color: #fff !important;
+   transition: all .4s ease;
 }
 .vision-dark form label{
    background-color: #000 !important;

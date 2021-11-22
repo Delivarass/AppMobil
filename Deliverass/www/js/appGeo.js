@@ -36,7 +36,7 @@ var app = {
     navigator.geolocation.getCurrentPosition(app.onSuccess);
   },
   onSuccess: function (position) {
-    var map = L.map('zona_mapa').setView([position.coords.latitude, position.coords.longitude], 17);
+    var map = L.map('zona_mapa').setView([locations[0][1], locations[0][2]], 17);
     mapLink ='<a href="http://openstreetmap.org">OpenStreetMap</a>';
     L.tileLayer(
       'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
