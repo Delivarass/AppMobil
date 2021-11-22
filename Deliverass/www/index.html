@@ -24,21 +24,46 @@
             <input type="text" id="id_treballador" name="id_treballador" placeholder="Escriu el teu DNI..">
 
             <label for="lname">CONTRASENYA</label>
-            <input type="password" id="contrasenya" name="contrasenya" placeholder="Escriu la teva contrasenya..">
-         
-            <input type="submit" id="accedir" onclick="XML_Login()" value="ACCEDIR">
+            <input type="password" id="password" name="password" placeholder="Escriu la teva contrasenya..">
+            
+            <input type="button" id="b1" value="ACCEDIR"> 
         </form>
-        
-        <!-- <a id="accedir" href="menu.html">ACCEDIR</a> -->
+        <button id="myBtn"><i class="fas fa-universal-access"></i>ACCESSIBILITAT</button>
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="botons_accessibilitat">
+                    <span class="titols_botons">MIDA DE LA FONT</span><br /><br />
+                    <button role="button" id="resettext">
+                        <span>RESTABLIR</span>
+                    </button>
+                    <button role="button" id="increasetext">
+                        <span>AUGMENTAR</span>
+                    </button> 
+                    <br /><br /><br /><span class="titols_botons">MIDA DE LA FONT</br><br />
+                    <button role="button" id="vision">
+                        <span>TEMA CLAR</span>
+                    </button>
+                    <button role="button" id="vision2">
+                        <span>TEMA FOSC</span>
+                    </button>
+                </div>
+            </div>
+          
         </div>
+        <!-- <a href="menu.html">ACCEDIR</a> -->
+    </div>
 
-        <footer>
-            <br />
-            <a href="accessibilitat.html"><i class="fas fa-universal-access"></i>ACCESSIBILITAT</a>
-        </footer> 
+    <footer>
+        
+    </footer>
 
-        <script src="cordova.js"></script>
-        <script src="js/index.js"></script>
-        <!-- <script src="js/login.js"></script> -->
-    </body>
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/accessibilitat.js"></script>
+
+</body>
+
 </html>
