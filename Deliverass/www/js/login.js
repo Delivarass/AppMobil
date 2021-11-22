@@ -1,4 +1,4 @@
-$(document).ready(function () {
+//$(document).ready(function () {
     var xml;
     $('#b1').click(function () {
         $.get('xml/repartidors.xml', null, function (data, textStatus) {
@@ -12,4 +12,4 @@ $(document).ready(function () {
             });
         });
     });
-});
+//});
