@@ -25,7 +25,7 @@ function lecturaxml(xml) {
     latitud   = xmlDoc.getElementsByTagName("latitud")[i].childNodes[0].nodeValue;
     longitud  = xmlDoc.getElementsByTagName("longitud")[i].childNodes[0].nodeValue;
     estat     = xmlDoc.getElementsByTagName("estat")[i].childNodes[0].nodeValue; 
-   locations.push(["Location"+i, latitud, longitud, estat]);
+    locations.push(["Location"+i, latitud, longitud, estat]);
     console.log(locations);
   }
   app.init();
@@ -43,7 +43,9 @@ var app = {
         attribution: '&copy; ' + mapLink + ' Contributors',
         maxZoom: 18,
       }).addTo(map);
-     // Colors
+     
+     
+      // Colors
      var greenIcon = new L.Icon({
       iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
       shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
