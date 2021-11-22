@@ -22,13 +22,11 @@ function lecturaxml(xml) {
   // console.log(xml.res);
   var xmlDoc = xml.responseXML;
   for (var i = 0; i < xmlDoc.getElementsByTagName("pedido").length; i++) {
-    latitud = xmlDoc.getElementsByTagName("latitud")[i].childNodes[0].nodeValue;
-    longitud = xmlDoc.getElementsByTagName("longitud")[i].childNodes[0].nodeValue;
-    
-  
-
-    locations.push(["Location"+i, latitud, longitud]);
-    // console.log(locations);
+    latitud   = xmlDoc.getElementsByTagName("latitud")[i].childNodes[0].nodeValue;
+    longitud  = xmlDoc.getElementsByTagName("longitud")[i].childNodes[0].nodeValue;
+    estat     = xmlDoc.getElementsByTagName("estat")[i].childNodes[0].nodeValue; 
+   locations.push(["Location"+i, latitud, longitud, estat]);
+    console.log(locations);
   }
   app.init();
 }
@@ -45,22 +43,33 @@ var app = {
         attribution: '&copy; ' + mapLink + ' Contributors',
         maxZoom: 18,
       }).addTo(map);
-    // L.marker([latitud, longitud]).addTo(map)
-    //   .bindPopup("<section class='popup'>" +
-    //     "<label for='entrega'>ENTREGA: </label>" +
-    //     "<label for='direccio'>DIRECCIÓ: </label>" +
-    //     "<label for='estat'>ESTAT: </label>" +
-    //     "<label for='pes'>PES: </label>" +
+     // Colors
+     var greenIcon = new L.Icon({
+      iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41]
+    });
 
-    //     "<div class='botons'>" +
-    //     "<button id='cancelar'>CANCELAR</button>" +
-    //     "<button id='entrega'>ENTREGA</button>" +
-    //     "</div>" +
-    //     "</section>")
-    //   .openPopup();
-  
+    var redIcon = new L.Icon({
+      iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41]
+    });
+
     for (var i = 0; i < locations.length; i++) {
-    marker = new L.marker([locations[i][1], locations[i][2]]).bindPopup(locations[i][0]).addTo(map);     
+      if (locations[i][3] == 'No entregat') {
+        marker = new L.marker([locations[i][1], locations[i][2]], { icon: redIcon }).bindPopup(locations[i][0]).addTo(map);
+      } else {
+        marker = new L.marker([locations[i][1], locations[i][2]], { icon: greenIcon }).bindPopup(locations[i][0]).addTo(map);
+      }
+
     }
   }
 }
+
