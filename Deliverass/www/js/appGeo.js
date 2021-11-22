@@ -22,6 +22,7 @@ function lecturaxml(xml) {
   for (var i = 0; i < xmlDoc.getElementsByTagName("pedido").length; i++) {
     latitud = xmlDoc.getElementsByTagName("latitud")[i].childNodes[0].nodeValue;
     longitud = xmlDoc.getElementsByTagName("longitud")[i].childNodes[0].nodeValue;
+    
   }
 
 }
