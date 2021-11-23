@@ -1,4 +1,4 @@
-document.getElementById("cameraTakePicture").addEventListener("click", cameraTakePicture); 
+//document.getElementById("cameraTakePicture").addEventListener("click", cameraTakePicture); 
    function cameraTakePicture() { 
    navigator.camera.getPicture(onSuccess, onFail, {  
       quality: 50, 

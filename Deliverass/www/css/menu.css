@@ -338,3 +338,8 @@ body{
    font-weight: bold;
    font-family: Maven Pro;
  }
+
+ #ImatgeCamara {
+   width: 100%;
+   border-radius: 13px;
+ }
