@@ -523,6 +523,9 @@ body#accessibilitat, body#paquet{
    color: #fff !important;
    transition: all .4s ease;
 }
+.vision-dark img {
+   filter: contrast(0.5);
+}
 .vision-dark form label{
    background-color: #000 !important;
    color: #fff !important;
