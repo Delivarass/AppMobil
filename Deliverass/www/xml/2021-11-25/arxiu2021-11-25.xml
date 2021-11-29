@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<deliverass>
+    <pedido id="7050">
+        <id_enviament>7050</id_enviament>
+        <id_destinatari>1</id_destinatari>
+        <id_treballador>1</id_treballador>
+        <direccio>c/Muralla n5</direccio>
+        <latitud>41.651839</latitud>
+        <longitud>1.140835</longitud>
+        <img></img>
+        <pes>23KG</pes>
+        <cp>25300</cp>
+        <dataEnv>2021-11-16</dataEnv>
+        <estat>No entregat</estat>
+        <dataEnt/>
+        <imatge>#</imatge>
+    </pedido>
+    <pedido id="6110">
+        <id_enviament>6110</id_enviament>
+        <id_destinatari>1</id_destinatari>
+        <id_treballador>2</id_treballador>
+        <direccio>av/Catalunya n59</direccio>
+        <latitud>41.648759</latitud>
+        <longitud>1.104149</longitud>
+        <img></img>
+        <pes>100KG</pes>
+        <cp>25300</cp>
+        <dataEnv>2021-11-16</dataEnv>
+        <estat>Entregat</estat>
+        <dataEnt/>
+        <imatge>#</imatge>
+    </pedido>
+</deliverass>

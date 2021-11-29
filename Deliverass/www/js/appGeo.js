@@ -28,7 +28,8 @@ function lecturaxml(xml) {
     direccio  = xmlDoc.getElementsByTagName("direccio")[i].childNodes[0].nodeValue;  
     dataEnv  = xmlDoc.getElementsByTagName("dataEnv")[i].childNodes[0].nodeValue; 
     estat = xmlDoc.getElementsByTagName("estat")[i].childNodes[0].nodeValue; 
-    locations.push([i, latitud, longitud, id_enviament, direccio, dataEnv, estat]);
+    imatge = xmlDoc.getElementsByTagName("imatge")[i].childNodes[0].nodeValue; 
+    locations.push([i, latitud, longitud, id_enviament, direccio, dataEnv, estat, imatge]);
     console.log(locations);
   }
   app.init();
@@ -69,16 +70,16 @@ var app = {
 
     for (var i = 0; i < locations.length; i++) {
       if (locations[i][6] == 'No entregat') {
-        marker = new L.marker([locations[i][1], locations[i][2]], { icon: redIcon }).bindPopup("<button id='cameraTakePicture' onclick='cameraTakePicture()'><i class='fas fa-camera'></i>&nbsp;FOTO</button><br><img id='ImatgeCamara'></img><br><button id='btnEntregar'><i class='fas fa-check'></i>&nbsp;ENTREGAT</button><br><b>Ref.: </b>" + locations[i][3] + "<br><b>Direccio: </b>" + locations[i][4]+ "<br><b>Entrega: </b>" + locations[i][5] + "<br><b>Estat: </b>" + locations[i][6]).addTo(map);
+        marker = new L.marker([locations[i][1], locations[i][2]], { icon: greenIcon }).bindPopup("<button id='cameraTakePicture' onclick='cameraTakePicture()'><i class='fas fa-camera'></i>&nbsp;FOTO</button><br><img id='ImatgeCamara' src='" + locations[i][7] + "'></img><br><button id='btnEntregar' onclick='guardarImatge()'><i class='fas fa-check'></i>&nbsp;ENTREGAT</button><br><b>Ref.: </b><span id='referencia'>" + locations[i][3] + "</span><br><b>Direccio: </b>" + locations[i][4]+ "<br><b>Entrega: </b>" + locations[i][5] + "<br><b>Estat: </b>" + locations[i][6]).addTo(map);
       } else {
-        marker = new L.marker([locations[i][1], locations[i][2]], { icon: greenIcon }).bindPopup("<button id='cameraTakePicture' onclick='cameraTakePicture()'><i class='fas fa-camera'></i>&nbsp;FOTO</button><br><img id='ImatgeCamara'></img><br><button id='btnEntregar'><i class='fas fa-check'></i>&nbsp;ENTREGAT</button><br><b>Ref.: </b>" + locations[i][3] + "<br><b>Direccio: </b>" + locations[i][4]+ "<br><b>Entrega: </b>" + locations[i][5] + "<br><b>Estat: </b>" + locations[i][6]).addTo(map);
+        marker = new L.marker([locations[i][1], locations[i][2]], { icon: redIcon }).bindPopup("<img id='ImatgeCamara'></img><br><b>Ref.: </b>" + locations[i][3] + "<br><b>Direccio: </b>" + locations[i][4]+ "<br><b>Entrega: </b>" + locations[i][5] + "<br><b>Estat: </b>" + locations[i][6]).addTo(map);
       }
         
     }
   }
 }
 
-document.getElementById("cameraTakePicture").addEventListener("click", cameraTakePicture); 
+// document.getElementById("cameraTakePicture").addEventListener("click", cameraTakePicture); 
    function cameraTakePicture() { 
    navigator.camera.getPicture(onSuccess, onFail, {  
       quality: 50, 
