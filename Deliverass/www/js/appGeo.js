@@ -14,7 +14,7 @@ function inici() {
       lecturaxml(this);
     }
   };
-  xhttp.open("GET", "xml/"+ date +"/arxiu"+ date +".xml", true);
+  xhttp.open("GET", "\\192.168.1.154\\arxiusXml\\2021-11-25\\arxiu2021-11-25.xml", true);
   xhttp.send();
 }
 
