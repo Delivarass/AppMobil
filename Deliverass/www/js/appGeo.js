@@ -14,7 +14,7 @@ function inici() {
       lecturaxml(this);
     }
   };
-  xhttp.open("GET", "xml/"+ date +"/arxiu"+ date +".xml", true);
+  xhttp.open("GET", "http://192.168.1.20/"+ date +"/arxiu"+ date +".xml", true);
   xhttp.send();
 }
 
@@ -28,8 +28,8 @@ function lecturaxml(xml) {
     direccio  = xmlDoc.getElementsByTagName("direccio")[i].childNodes[0].nodeValue;  
     dataEnv  = xmlDoc.getElementsByTagName("dataEnv")[i].childNodes[0].nodeValue; 
     estat = xmlDoc.getElementsByTagName("estat")[i].childNodes[0].nodeValue; 
-    imatge = xmlDoc.getElementsByTagName("imatge")[i].childNodes[0].nodeValue; 
-    locations.push([i, latitud, longitud, id_enviament, direccio, dataEnv, estat, imatge]);
+    //imatge = xmlDoc.getElementsByTagName("imatge")[i].childNodes[0].nodeValue; 
+    locations.push([i, latitud, longitud, id_enviament, direccio, dataEnv, estat]);
     console.log(locations);
   }
   app.init();
