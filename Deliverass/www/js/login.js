@@ -1,7 +1,7 @@
 //$(document).ready(function () {
     var xml;
     $('#b1').click(function () {
-        $.get('xml/repartidors.xml', null, function (data, textStatus) {
+        $.get('http://192.168.1.20/repartidors.xml', null, function (data, textStatus) {
             xml = data;
             $(xml).find('repartidor').each(function () {
                 var item = $(this);
