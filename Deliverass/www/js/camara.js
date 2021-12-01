@@ -37,8 +37,11 @@ function guardarImatge() {
    function lecturaxml(xml) {
       var xmlDoc = xml.responseXML;
       var estatnou = xmlDoc.querySelector("pedido['" + ref + "']/estat").textContent;
-      estatnou.textContent = "Entregat";
-      console.log(estatnou.nodeValue);
+      while (estatnou == xmlDoc.getElementsByTagName("pedido").getAttribute) {
+         var estat = xmlDoc.getElementsByTagName("estat")[1];
+         estat.textContent = "Entregat";
+      }
+      console.log(estat.nodeValue);
       location.href = "menu.html";
    }
 
