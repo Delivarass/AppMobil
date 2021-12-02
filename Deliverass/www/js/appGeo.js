@@ -20,6 +20,21 @@ function inici() {
   xhttp.send();
 }
 
+function editar(){
+  var xhttp = new XMLHttpRequest();
+  var parametres = document.getElementById("referencia").textContent;
+  console.log(parametres);
+  // xhttp.onreadystatechange = function() {
+  //   if (this.readyState == 4 && this.status == 200) {
+  //     location.reload();
+  //   }
+  // };
+  xhttp.open("POST", "http://192.168.1.20/editar.php", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send("id=" + parametres);
+  location.reload();
+}
+
 function lecturaxml(xml) {
   // console.log(xml.res);
   var xmlDoc = xml.responseXML;
@@ -70,10 +85,9 @@ var app = {
       shadowSize: [41, 41]
     });
 
-    var accio = "192.168.1.20/editar.php";
     for (var i = 0; i < locations.length; i++) {
       if (locations[i][6] == 'No entregat') {
-        marker = new L.marker([locations[i][1], locations[i][2]], { icon: greenIcon }).bindPopup("<button id='cameraTakePicture' onclick='cameraTakePicture()'><i class='fas fa-camera'></i>&nbsp;FOTO</button><br><img id='ImatgeCamara' src='" + locations[i][7] + "'></img><br><form method='POST' action='" + accio + "'><input type='submit' value='ENTREGAT'></form><br><b>Ref.: </b><span id='referencia'>" + locations[i][3] + "</span><br><b>Direccio: </b>" + locations[i][4]+ "<br><b>Entrega: </b>" + locations[i][5] + "<br><b>Estat: </b>" + locations[i][6]).addTo(map);
+        marker = new L.marker([locations[i][1], locations[i][2]], { icon: greenIcon }).bindPopup("<button id='cameraTakePicture' onclick='cameraTakePicture()'><i class='fas fa-camera'></i>&nbsp;FOTO</button><br><img id='ImatgeCamara' src='" + locations[i][7] + "'></img><br><button id='btnEntregar' onclick='editar()'><i class='fas fa-check'></i>&nbsp;ENTREGAT</button><br><b>Ref.: </b><span id='referencia'>" + locations[i][3] + "</span><br><b>Direccio: </b>" + locations[i][4]+ "<br><b>Entrega: </b>" + locations[i][5] + "<br><b>Estat: </b>" + locations[i][6]).addTo(map);
       } else {
         marker = new L.marker([locations[i][1], locations[i][2]], { icon: redIcon }).bindPopup("<img id='ImatgeCamara'></img><br><b>Ref.: </b>" + locations[i][3] + "<br><b>Direccio: </b>" + locations[i][4]+ "<br><b>Entrega: </b>" + locations[i][5] + "<br><b>Estat: </b>" + locations[i][6]).addTo(map);
       }
