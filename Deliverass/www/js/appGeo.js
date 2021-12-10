@@ -3,9 +3,8 @@ window.addEventListener("load", inici, false);
 var locations = [];
 
 
-
 function inici() {
-  
+  //carregarImatge();
   var today = new Date();
   var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 
@@ -35,6 +34,7 @@ function editar(){
   xhttp.send("id=" + parametres);
   // + "&uid=" + device.uuid
   alert("Entrega numero " + parametres + " realitzada correctament!");
+  //carregarImatge();
     location.reload();
 }
 
@@ -98,14 +98,15 @@ var app = {
 
     for (var i = 0; i < locations.length; i++) {
       if (locations[i][6] == 'No entregat') {
-        marker = new L.marker([locations[i][1], locations[i][2]], { icon: greenIcon }).bindPopup("<button id='cameraTakePicture' onclick='cameraTakePicture()'><i class='fas fa-camera'></i>&nbsp;FOTO</button><br><img id='ImatgeCamara' src='" + locations[i][7] + "'></img><br><button id='btnEntregar' onclick='editar()'><i class='fas fa-check'></i>&nbsp;ENTREGAT</button><br><b>Ref.: </b><span id='referencia'>" + locations[i][3] + "</span><br><b>Direccio: </b>" + locations[i][4]+ "<br><b>Entrega: </b>" + locations[i][5] + "<br><b>Estat: </b>" + locations[i][6]).addTo(map);
+        marker = new L.marker([locations[i][1], locations[i][2]], { icon: redIcon }).bindPopup("<button id='cameraTakePicture' onclick='cameraTakePicture()'><i class='fas fa-camera'></i>&nbsp;FOTO</button><br><img id='ImatgeCamara' src=''/ ><br><button id='btnEntregar' onclick='editar()'><i class='fas fa-check'></i>&nbsp;ENTREGAT</button><br><b>Ref.: </b><span id='referencia'>" + locations[i][3] + "</span><br><b>Direccio: </b>" + locations[i][4]+ "<br><b>Entrega: </b>" + locations[i][5] + "<br><b>Estat: </b>" + locations[i][6]).addTo(map);
       } else {
-        marker = new L.marker([locations[i][1], locations[i][2]], { icon: redIcon }).bindPopup("<img id='ImatgeCamara'></img><br><b>Ref.: </b>" + locations[i][3] + "<br><b>Direccio: </b>" + locations[i][4]+ "<br><b>Entrega: </b>" + locations[i][5] + "<br><b>Estat: </b>" + locations[i][6]).addTo(map);
+        marker = new L.marker([locations[i][1], locations[i][2]], { icon: greenIcon }).bindPopup("<button id='loadPicture' onclick='carregarImatge()'><i class='fas fa-camera'></i>&nbsp;CARREGAR FOTO</button><br><img src='' id='ImatgeCamaraNova' /><br><b>Ref.: </b><span id='referencia'>" + locations[i][3] + "</span><br><b>Direccio: </b>" + locations[i][4]+ "<br><b>Entrega: </b>" + locations[i][5] + "<br><b>Estat: </b>" + locations[i][6]).addTo(map);
       }
         
     }
   }
 }
+carregarImatge();
 
 // document.getElementById("cameraTakePicture").addEventListener("click", cameraTakePicture); 
    function cameraTakePicture() { 
@@ -119,9 +120,9 @@ var app = {
       var image = document.getElementById('ImatgeCamara'); 
       image.src = "data:image/jpeg;base64," + imageData; 
    }  
-    
    function onFail(message) { 
       alert('Failed because: ' + message); 
    } 
 }
+
 
