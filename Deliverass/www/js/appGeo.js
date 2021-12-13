@@ -31,7 +31,7 @@ function editar(){
   // };
   xhttp.open("POST", "http://192.168.1.20/editar.php", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send("id=" + parametres);
+  xhttp.send("id=" + parametres +"&"+ "uuid=" + device.uuid);
   location.reload();
 }
 
