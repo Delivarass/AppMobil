@@ -9,41 +9,41 @@ function cameraTakePicture() {
    function onSuccess(imageData) {
       var image = document.getElementById('ImatgeCamara');
       image.src = "data:image/jpeg;base64," + imageData;
+      guardarImatge();
    }
 
    function onFail(message) {
-      alert('Failed because: ' + message);
+      alert('Error: ' + message);
    }
 
 }
 
-function guardarImatge() {
+function getBase64Image(img) {
+   var canvas = document.createElement("canvas");
+   canvas.width = img.width;
+   canvas.height = img.height;
+ 
+   var ctx = canvas.getContext("2d");
+   ctx.drawImage(img, 0, 0);
+ 
+   var dataURL = canvas.toDataURL("image/png");
+ 
+   return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+ }
+ 
+ function guardarImatge(){
+   var parametres2 = document.getElementById("referencia").textContent;
+   bannerImage = document.getElementById('ImatgeCamara');
+   imgData = getBase64Image(bannerImage);
+   localStorage.setItem("img_" + parametres2, imgData);
+   console.log(bannerImage);
+ }
+ 
+ function carregarImatge(){
+   var parametres2 = document.getElementById("referencia").textContent;
+   var dataImage = localStorage.getItem("img_" + parametres2);
+   bannerImg = document.getElementById('ImatgeCamaraNova');
+   bannerImg.src = "data:image/jpeg;base64," + dataImage;
+ }
 
-   var ref = document.getElementById("referencia").textContent;
-
-   var today = new Date();
-   var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-   var arxiu = "xml/" + date + "/arxiu" + date + ".xml";
-
-   var xhttp = new XMLHttpRequest();
-   xhttp.onreadystatechange = function() {
-      if (xhttp.readyState == 4 && xhttp.status == 200) {
-         lecturaxml(this);
-      }
-   }
-   xhttp.open("GET", arxiu, true);
-   xhttp.send();
-
-   function lecturaxml(xml) {
-      var xmlDoc = xml.responseXML;
-      var estatnou = xmlDoc.querySelector("pedido['" + ref + "']/estat").textContent;
-      while (estatnou == xmlDoc.getElementsByTagName("pedido").getAttribute) {
-         var estat = xmlDoc.getElementsByTagName("estat")[1];
-         estat.textContent = "Entregat";
-      }
-      console.log(estat.nodeValue);
-      location.href = "menu.html";
-   }
-
-}
 
