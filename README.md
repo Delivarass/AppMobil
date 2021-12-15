@@ -1,3 +1,2 @@
 # AppMobil
 
-Bulangiu
